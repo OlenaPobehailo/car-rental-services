@@ -1,9 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-import HomePage from 'pages/HomePage';
-import CatalogPage from 'pages/CatalogPage';
-import FavoritesPage from 'pages/FavoritesPage';
-import PageNotFound from 'pages/NotFoundPage';
+import { HomePage, CatalogPage, FavoritesPage, NotFoundPage } from 'pages';
+
 
 
 function App() {
@@ -14,7 +12,7 @@ function App() {
         <Route path="catalog" element={<CatalogPage />} />
         <Route path="favorites" element={<FavoritesPage />} />
       </Route>
-      <Route path="*" element={<PageNotFound />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

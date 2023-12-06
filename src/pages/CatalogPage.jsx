@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCars } from '../redux/cars/operations';
 import { selectCars, selectError, selectIsLoading } from '../redux/cars/selectors';
+import { StyledCommonWrapper } from 'styles/Common.styled';
 
 const CatalogPage = () => {
   const cars = useSelector(selectCars);
@@ -17,7 +18,7 @@ const CatalogPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <StyledCommonWrapper>
       <h1>CatalogPage</h1>
       {isLoading && <h2>Loading...</h2>}
       {error && <p>Error: {error}</p>}
@@ -31,7 +32,7 @@ const CatalogPage = () => {
           ))}
         </ul>
       )}
-    </div>
+    </StyledCommonWrapper>
   );
 };
 

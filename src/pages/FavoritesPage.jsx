@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { StyledCommonWrapper } from 'styles/Common.styled';
 
 const FavoritesPage = () => {
-  return (
-    <div>FavoritesPage</div>
-  )
-}
+  return <StyledCommonWrapper>FavoritesPage</StyledCommonWrapper>;
+};
 
-export default FavoritesPage
+export default FavoritesPage;

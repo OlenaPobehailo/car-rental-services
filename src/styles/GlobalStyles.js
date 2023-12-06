@@ -21,7 +21,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-ul {
+ul, ol, li {
   margin: 0;
   padding: 0;
   list-style: none;

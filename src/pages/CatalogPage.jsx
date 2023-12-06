@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Card from 'components/Card';
 import { getAllCars } from '../redux/cars/operations';
 import { selectCars, selectError, selectIsLoading } from '../redux/cars/selectors';
 import { StyledCommonWrapper } from 'styles/Common.styled';
+import { StyledList } from './CatalogPage.styled';
 
 const CatalogPage = () => {
   const cars = useSelector(selectCars);
@@ -12,25 +14,20 @@ const CatalogPage = () => {
 
   console.log(cars);
 
-
   useEffect(() => {
     dispatch(getAllCars());
   }, [dispatch]);
 
   return (
     <StyledCommonWrapper>
-      <h1>CatalogPage</h1>
       {isLoading && <h2>Loading...</h2>}
       {error && <p>Error: {error}</p>}
-
       {cars && (
-        <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+        <StyledList>
           {cars.map(item => (
-            <li key={item.id} style={{ border: '1px solid grey' }}>
-              <p>{item.model}</p>
-            </li>
+            <Card key={item.id} {...item} />
           ))}
-        </ul>
+        </StyledList>
       )}
     </StyledCommonWrapper>
   );

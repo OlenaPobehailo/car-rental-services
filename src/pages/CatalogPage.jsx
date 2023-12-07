@@ -5,7 +5,6 @@ import { getAllCars } from '../redux/cars/operations';
 import { selectError, selectIsLoading } from '../redux/cars/selectors';
 import { StyledCommonWrapper } from 'styles/Common.styled';
 import { StyledList } from './CatalogPage.styled';
-import Button from 'components/UI/Button';
 import { LoadMoreButton } from 'components/UI/Button/Button.styled';
 
 const CatalogPage = () => {
@@ -14,6 +13,7 @@ const CatalogPage = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
+  const perPage = 12;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,6 +35,8 @@ const CatalogPage = () => {
     }
   };
 
+  const allElementsLoaded = cars.length % perPage !== 0;
+
   return (
     <StyledCommonWrapper>
       {isLoading && <h2>Loading...</h2>}
@@ -48,10 +50,11 @@ const CatalogPage = () => {
             ))}
           </StyledList>
 
-          
-          <LoadMoreButton onClick={handleLoadMore} disabled={isLoading}>
-            {isLoading ? 'Loading...' : 'Load More'}
-          </LoadMoreButton>
+          {!allElementsLoaded && (
+            <LoadMoreButton onClick={handleLoadMore} disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'Load More'}
+            </LoadMoreButton>
+          )}
         </>
       )}
     </StyledCommonWrapper>

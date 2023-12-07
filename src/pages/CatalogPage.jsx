@@ -1,33 +1,58 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from 'components/Card';
 import { getAllCars } from '../redux/cars/operations';
-import { selectCars, selectError, selectIsLoading } from '../redux/cars/selectors';
+import { selectError, selectIsLoading } from '../redux/cars/selectors';
 import { StyledCommonWrapper } from 'styles/Common.styled';
 import { StyledList } from './CatalogPage.styled';
+import Button from 'components/UI/Button';
+import { LoadMoreButton } from 'components/UI/Button/Button.styled';
 
 const CatalogPage = () => {
-  const cars = useSelector(selectCars);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [cars, setCars] = useState([]);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
 
-  console.log(cars);
-
   useEffect(() => {
-    dispatch(getAllCars());
-  }, [dispatch]);
+    const fetchData = async () => {
+      try {
+        const response = await dispatch(getAllCars(currentPage));
+        const newCars = response.payload || [];
+        setCars(prevCars => [...prevCars, ...newCars]);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [dispatch, currentPage]);
+
+  const handleLoadMore = () => {
+    if (!isLoading) {
+      setCurrentPage(prevPage => prevPage + 1);
+    }
+  };
 
   return (
     <StyledCommonWrapper>
       {isLoading && <h2>Loading...</h2>}
       {error && <p>Error: {error}</p>}
-      {cars && (
-        <StyledList>
-          {cars.map(item => (
-            <Card key={item.id} {...item} />
-          ))}
-        </StyledList>
+
+      {cars.length > 0 && (
+        <>
+          <StyledList>
+            {cars.map(item => (
+              <Card key={item.id} {...item} />
+            ))}
+          </StyledList>
+
+          
+          <LoadMoreButton onClick={handleLoadMore} disabled={isLoading}>
+            {isLoading ? 'Loading...' : 'Load More'}
+          </LoadMoreButton>
+        </>
       )}
     </StyledCommonWrapper>
   );

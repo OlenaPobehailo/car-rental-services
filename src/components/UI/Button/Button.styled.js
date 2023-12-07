@@ -25,3 +25,22 @@ export const ButtonStyled = styled.button`
     background-color: ${({ theme: { accent } }) => colors.accent.secondary};
   }
 `;
+
+export const LoadMoreButton = styled(ButtonStyled)`
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+
+  background-color: transparent;
+  color: ${({ theme: { accent } }) => colors.accent.primary};
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+
+  &:hover {
+    background-color: transparent;
+    color: ${({ theme: { accent } }) => colors.accent.secondary};
+  }
+`;

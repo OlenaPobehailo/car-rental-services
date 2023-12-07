@@ -11,5 +11,9 @@ export const StyledList = styled.ul`
     flex-wrap: wrap;
 
     gap: 29px;
+
+    margin-bottom: 100px;
+
+
   }
 `;

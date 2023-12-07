@@ -33,7 +33,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
 `;
 
-export const ScrollContent = styled.div`
-  overflow-y: scroll;
-  height: 752px;
-`;
+// export const ScrollContent = styled.div`
+//   overflow-y: scroll;
+//   height: 752px;
+// `;

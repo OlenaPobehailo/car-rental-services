@@ -22,10 +22,13 @@ export const ImageWrapper = styled.div`
   width: 461px;
   height: 248px;
   margin-bottom: 14px;
+  border-radius: 14px;
+  overflow: hidden;
 `;
 
 export const Image = styled.img`
   object-fit: cover;
+  object-position: center;
 `;
 
 export const Title = styled.p`
@@ -50,7 +53,6 @@ export const StyledList = styled.ul`
 export const Subtitle = styled.p`
   margin-bottom: 8px;
   margin-top: 24px;
-
 
   color: #121417;
 

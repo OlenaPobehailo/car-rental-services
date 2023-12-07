@@ -5,6 +5,8 @@ export const StyledCard = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 14px;
+
 
   /* flex-basis: calc(100% - 30px); */
 
@@ -28,6 +30,7 @@ export const Image = styled.img`
   width: 100%;
   height: 268px;
   margin-bottom: 14px;
+  border-radius: 14px;
 
   object-fit: cover;
 `;

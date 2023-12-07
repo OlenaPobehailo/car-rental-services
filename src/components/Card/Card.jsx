@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import Button from 'components/UI/Button';
-import { Description, Image, Item, Model, StyledCard, StyledList } from './Card.styled';
 import { images } from 'assets/images';
 import { getCity, getCountry } from 'utils/splitAddress';
 import { isPremium } from 'utils/isPremium';
+import { Description, Image, Item, Model, StyledCard, StyledList } from './Card.styled';
+import Modal from '../UI/Modal/Modal';
+import Details from '../Details/Details';
 
-const Card = ({
-  img,
+const Card = (item) => {
+  
+  const {img,
   model,
   make,
   year,
@@ -14,14 +18,24 @@ const Card = ({
   accessories,
   type,
   mileage,
-  rentalPrice,
-}) => {
+  rentalPrice,} = item;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const city = getCity(address);
   const country = getCountry(address);
   const premium = isPremium(accessories);
   const formattedMileage = mileage.toLocaleString('en-US');
 
   const pathToImage = img || images.placeholder;
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <StyledCard>
@@ -48,7 +62,11 @@ const Card = ({
         <Item>{accessories[0]}</Item>
       </StyledList>
 
-      <Button>Learn more</Button>
+      <Button onClick={openModal}>Learn more</Button>
+
+      {isModalOpen && <Modal close={closeModal}>
+        <Details {...item}/>
+        </Modal>}
     </StyledCard>
   );
 };

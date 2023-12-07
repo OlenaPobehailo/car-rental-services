@@ -50,13 +50,9 @@ export const RentalButton = styled.a`
   width: inherit;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 24px;
   padding-left: 50px;
   padding-right: 50px;
-
-
-
-
-
   padding-top: 12px;
   padding-bottom: 12px;
 

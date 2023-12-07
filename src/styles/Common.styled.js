@@ -15,8 +15,8 @@ export const StyledCommonWrapper = styled.div`
     width: 768px;
   }
 
-  @media screen and (min-width: 1200px) {
-    width: 1200px;
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
   }
 
   outline: 1px solid salmon;   //!  TO DELETE

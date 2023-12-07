@@ -17,7 +17,7 @@ export const ModalContent = styled.div`
   position: relative;
   background-color: ${({ theme: { colors } }) => colors.background.primary};
 
-  padding: 15px 37px;
+  padding: 40px 37px;
   overflow: hidden;
   max-width: 541px;
   border-radius: 24px;
@@ -35,5 +35,5 @@ export const CloseButton = styled.button`
 
 export const ScrollContent = styled.div`
   overflow-y: scroll;
-  height: 400px;
+  height: 752px;
 `;

@@ -43,7 +43,7 @@ const Card = (item) => {
 
       <Description>
         <span>
-          {`${make} `} <Model>${model}</Model>
+          {`${make} `} <Model>{model}</Model>
           {`, ${year}`}
         </span>
         <span>{`${rentalPrice}`}</span>

@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import { useCallback, useEffect } from 'react';
 
 import { CloseButton, ModalContent, ModalWrapper } from './Modal.styled';
+import { CrossIcon } from 'assets/images';
 
 const rootModal = document.querySelector('#modal');
 
@@ -33,7 +34,9 @@ const Modal = ({ children, close }) => {
   return ReactDOM.createPortal(
     <ModalWrapper onClick={handleClickOutside}>
       <ModalContent>
-        <CloseButton onClick={close}>x</CloseButton>
+        <CloseButton onClick={close}>
+          <CrossIcon />
+        </CloseButton>
         {children}
       </ModalContent>
     </ModalWrapper>,

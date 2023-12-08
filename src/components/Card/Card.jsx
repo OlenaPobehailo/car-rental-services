@@ -1,15 +1,25 @@
-import { images } from "assets/images";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectFavorites } from "../../redux/favorites/selectors";
-import { addToFavorites, removeFromFavorites } from "../../redux/favorites/slice";
-import { isPremium } from "utils/isPremium";
-import { getCity, getCountry } from "utils/splitAddress";
-import { Description, Image, Item, Model, StyledCard, StyledList } from "./Card.styled";
-import Button from "components/UI/Button";
-import Modal from "components/UI/Modal";
-import Details from "components/Details";
-
+import { images } from 'assets/images';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from '../../redux/favorites/selectors';
+import { addToFavorites, removeFromFavorites } from '../../redux/favorites/slice';
+import { isPremium } from 'utils/isPremium';
+import { getCity, getCountry } from 'utils/splitAddress';
+import {
+  ButtonFavorite,
+  Description,
+  Image,
+  ImageWrapper,
+  Item,
+  Model,
+  StyledCard,
+  StyledHeartIcon,
+  StyledList,
+  TextOverlay,
+} from './Card.styled';
+import Button from 'components/UI/Button';
+import Modal from 'components/UI/Modal';
+import Details from 'components/Details';
 
 const Card = item => {
   const {
@@ -49,7 +59,7 @@ const Card = item => {
 
   const toggleFavorite = () => {
     if (isFavorite) {
-      dispatch(removeFromFavorites({ id}));
+      dispatch(removeFromFavorites({ id }));
     } else {
       dispatch(addToFavorites({ id }));
     }
@@ -57,7 +67,9 @@ const Card = item => {
 
   return (
     <StyledCard>
-      <Image src={pathToImage} alt="" />
+      <ImageWrapper>
+        <Image src={pathToImage} alt="" />
+      </ImageWrapper>
 
       <Description>
         <span>
@@ -81,9 +93,11 @@ const Card = item => {
       </StyledList>
 
       <Button onClick={openModal}>Learn more</Button>
-      <button onClick={toggleFavorite} style={{ color: isFavorite ? 'red' : 'black' }}>
-        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
-      </button>
+
+      <ButtonFavorite onClick={toggleFavorite}>
+        <StyledHeartIcon isFavorite={isFavorite} />
+      </ButtonFavorite>
+
       {isModalOpen && (
         <Modal close={closeModal}>
           <Details {...item} />

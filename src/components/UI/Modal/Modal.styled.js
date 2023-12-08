@@ -26,8 +26,8 @@ export const ModalContent = styled.div`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 16px;
+  right: 16px;
   background-color: transparent;
   border: none;
   font-size: 16px;

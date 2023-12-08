@@ -1,12 +1,13 @@
+import { HeartIcon } from 'assets/images';
 import styled from 'styled-components';
 
 export const StyledCard = styled.li`
+  position: relative;
   width: 274px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 14px;
-
 
   /* flex-basis: calc(100% - 30px); */
 
@@ -26,6 +27,17 @@ export const StyledCard = styled.li`
   }
 `;
 
+export const ImageWrapper = styled.div`
+  height: 268px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 2.5%, rgba(18, 20, 23, 0) 41.07%),
+    url(<path-to-image>), lightgray 50% / cover no-repeat;
+/* 
+    & ::before{
+      content:"test"
+    } */
+`;
+
 export const Image = styled.img`
   width: 100%;
   height: 268px;
@@ -34,6 +46,7 @@ export const Image = styled.img`
 
   object-fit: cover;
 `;
+
 
 export const Description = styled.p`
   display: flex;
@@ -78,4 +91,22 @@ export const Item = styled.li`
   &:not(:last-child) {
     border-right: 1px solid rgba(18, 20, 23, 0.1);
   }
+`;
+
+export const ButtonFavorite = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: none;
+`;
+
+export const StyledHeartIcon = styled(HeartIcon)`
+  stroke: ${({ isFavorite }) => (isFavorite ? 'blue' : 'white')};
+  fill: ${({ isFavorite }) => (isFavorite ? 'blue' : 'none')};
 `;

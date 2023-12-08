@@ -10,8 +10,7 @@ import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
   <BrowserRouter basename="/car-rental-services">
     <Provider store={store}>

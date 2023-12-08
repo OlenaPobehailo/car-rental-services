@@ -107,6 +107,6 @@ export const ButtonFavorite = styled.button`
 `;
 
 export const StyledHeartIcon = styled(({ isFavorite, ...rest }) => <HeartIcon {...rest} />)`
-  stroke: ${({ isFavorite }) => (isFavorite ? 'blue' : 'white')};
-  fill: ${({ isFavorite }) => (isFavorite ? 'blue' : 'none')};
+  stroke: ${({ isFavorite }) => (isFavorite ? 'rgba(52, 112, 255, 1)' : 'rgba(255, 255, 255, 0.8)')};
+  fill: ${({ isFavorite }) => (isFavorite ? 'rgba(52, 112, 255, 1)' : 'none')};
 `;

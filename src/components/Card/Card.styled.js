@@ -106,7 +106,7 @@ export const ButtonFavorite = styled.button`
   border: none;
 `;
 
-export const StyledHeartIcon = styled(HeartIcon)`
+export const StyledHeartIcon = styled(({ isFavorite, ...rest }) => <HeartIcon {...rest} />)`
   stroke: ${({ isFavorite }) => (isFavorite ? 'blue' : 'white')};
   fill: ${({ isFavorite }) => (isFavorite ? 'blue' : 'none')};
 `;

@@ -15,7 +15,6 @@ import {
   StyledCard,
   StyledHeartIcon,
   StyledList,
-  TextOverlay,
 } from './Card.styled';
 import Button from 'components/UI/Button';
 import Modal from 'components/UI/Modal';
@@ -59,9 +58,9 @@ const Card = item => {
 
   const toggleFavorite = () => {
     if (isFavorite) {
-      dispatch(removeFromFavorites({ id }));
+      dispatch(removeFromFavorites({ ...item }));
     } else {
-      dispatch(addToFavorites({ id }));
+      dispatch(addToFavorites({ ...item }));
     }
   };
 

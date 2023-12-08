@@ -1,31 +1,41 @@
-import { useState } from 'react';
-import Button from 'components/UI/Button';
-import { images } from 'assets/images';
-import { getCity, getCountry } from 'utils/splitAddress';
-import { isPremium } from 'utils/isPremium';
-import { Description, Image, Item, Model, StyledCard, StyledList } from './Card.styled';
-import Modal from '../UI/Modal/Modal';
-import Details from '../Details/Details';
+import { images } from "assets/images";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavorites } from "../../redux/favorites/selectors";
+import { addToFavorites, removeFromFavorites } from "../../redux/favorites/slice";
+import { isPremium } from "utils/isPremium";
+import { getCity, getCountry } from "utils/splitAddress";
+import { Description, Image, Item, Model, StyledCard, StyledList } from "./Card.styled";
+import Button from "components/UI/Button";
+import Modal from "components/UI/Modal";
+import Details from "components/Details";
 
-const Card = (item) => {
-  
-  const {img,
-  model,
-  make,
-  year,
-  address,
-  rentalCompany,
-  accessories,
-  type,
-  mileage,
-  rentalPrice,} = item;
+
+const Card = item => {
+  const {
+    id,
+    img,
+    model,
+    make,
+    year,
+    address,
+    rentalCompany,
+    accessories,
+    type,
+    mileage,
+    rentalPrice,
+  } = item;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const city = getCity(address);
   const country = getCountry(address);
   const premium = isPremium(accessories);
   const formattedMileage = mileage.toLocaleString('en-US');
+
+  const favorites = useSelector(selectFavorites);
+  const isFavorite = favorites.some(item => item.id === id);
 
   const pathToImage = img || images.placeholder;
 
@@ -35,6 +45,14 @@ const Card = (item) => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites({ id}));
+    } else {
+      dispatch(addToFavorites({ id }));
+    }
   };
 
   return (
@@ -63,10 +81,14 @@ const Card = (item) => {
       </StyledList>
 
       <Button onClick={openModal}>Learn more</Button>
-
-      {isModalOpen && <Modal close={closeModal}>
-        <Details {...item}/>
-        </Modal>}
+      <button onClick={toggleFavorite} style={{ color: isFavorite ? 'red' : 'black' }}>
+        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+      </button>
+      {isModalOpen && (
+        <Modal close={closeModal}>
+          <Details {...item} />
+        </Modal>
+      )}
     </StyledCard>
   );
 };

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import theme from 'styles/theme';
-console.log(theme)
+
+const { colors } = theme;
 
 export const ModalWrapper = styled.div`
   position: fixed;
@@ -15,7 +16,7 @@ export const ModalWrapper = styled.div`
 
 export const ModalContent = styled.div`
   position: relative;
-  background-color: ${({ theme: { colors } }) => colors.background.primary};
+  background-color: ${colors.background.primary};
 
   padding: 40px 37px;
   overflow: hidden;
@@ -32,8 +33,3 @@ export const CloseButton = styled.button`
   font-size: 16px;
   cursor: pointer;
 `;
-
-// export const ScrollContent = styled.div`
-//   overflow-y: scroll;
-//   height: 752px;
-// `;

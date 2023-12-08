@@ -2,7 +2,7 @@
   "name": "car-rental-services",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://OlenaPobehailo.github.io/car-rental-services/",
+  "homepage": "https://OlenaPobehailo.github.io/car-rental-services",
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^2.0.1",

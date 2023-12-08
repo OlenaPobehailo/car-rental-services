@@ -10,10 +10,10 @@ const Header = () => {
           <NavLink to="/">Home</NavLink>
         </StyledNavLink>
         <StyledNavLink>
-          <NavLink to="catalog">Catalog</NavLink>
+          <NavLink to="/catalog">Catalog</NavLink>
         </StyledNavLink>
         <StyledNavLink>
-          <NavLink to="favorites">Favorites</NavLink>
+          <NavLink to="/favorites">Favorites</NavLink>
         </StyledNavLink>
       </StyledNav>
     </StyledHeader>

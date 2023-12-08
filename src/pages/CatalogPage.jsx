@@ -6,6 +6,7 @@ import { selectError, selectIsLoading } from '../redux/cars/selectors';
 import { StyledCommonWrapper } from 'styles/Common.styled';
 import { StyledList } from './CatalogPage.styled';
 import { LoadMoreButton } from 'components/UI/Button/Button.styled';
+import Filter from 'components/Filter';
 
 const CatalogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,6 +43,8 @@ const CatalogPage = () => {
       {isLoading && <h2>Loading...</h2>}
       {error && <p>Error: {error}</p>}
 
+      <Filter />
+      
       {cars.length > 0 && (
         <>
           <StyledList>

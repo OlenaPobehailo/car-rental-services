@@ -8,10 +8,11 @@ import {
 } from './CustomSelect.styled';
 import { ChevronIcon } from 'assets/images';
 
-const CustomSelect = ({ options, onSelect }) => {
+const CustomSelect = ({ title, options, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const selectRef = useRef(null);
+  const [containerHeight, setContainerHeight] = useState(null);
 
   const handleClickOutside = event => {
     if (selectRef.current && !selectRef.current.contains(event.target)) {
@@ -38,9 +39,9 @@ const CustomSelect = ({ options, onSelect }) => {
   };
 
   return (
-    <StyledSelect ref={selectRef}>
+    <StyledSelect ref={selectRef} title={title}>
       <SelectTitle>
-        <span>{selectedOption || 'Enter the text'}</span>
+        <span>{selectedOption || title}</span>
         <SelectButton>
           <ChevronIcon onClick={toggleOptions} />
         </SelectButton>

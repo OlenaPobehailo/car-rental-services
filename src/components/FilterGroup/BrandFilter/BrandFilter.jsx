@@ -1,18 +1,23 @@
 import brandData from 'assets/data/makes.json';
 import CustomSelect from 'components/UI/Select/CustomSelect';
 import { Title } from '../FilterGroup.styled';
+import { FilterWrapper } from './BrandFilter.styled';
 
 const BrandFilter = ({ onBrandSelect, title }) => {
   const handleSelect = selectedOption => {
-    // console.log('Selected option:', selectedOption);
     onBrandSelect(selectedOption);
   };
 
   return (
-    <div>
+    <FilterWrapper>
       <Title>{title}</Title>
-      <CustomSelect options={brandData.brands} onSelect={handleSelect} />
-    </div>
+      <CustomSelect
+        title={'Enter the text'}
+        options={brandData.brands}
+        onSelect={handleSelect}
+        maxHeight="274px"
+      />
+    </FilterWrapper>
   );
 };
 

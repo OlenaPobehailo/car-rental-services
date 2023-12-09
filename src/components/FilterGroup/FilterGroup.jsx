@@ -1,13 +1,16 @@
-import Filter from 'components/FilterGroup/BrandFilter/BrandFilter'
-import React from 'react'
-import { StyledFilterGroup } from './FilterGroup.styled'
+import BrandFilter from 'components/FilterGroup/BrandFilter/BrandFilter';
+import React from 'react';
+import { StyledFilterGroup } from './FilterGroup.styled';
+import PriceFilter from './PriceFilter';
 
-const FilterGroup = ({setSelectedBrand}) => {
+const FilterGroup = ({ setSelectedBrand, setSelectedPrice }) => {
   return (
     <StyledFilterGroup>
-          <Filter onBrandSelect={setSelectedBrand} title={'Car brand'} />
-    </StyledFilterGroup>
-  )
-}
+      <BrandFilter onBrandSelect={setSelectedBrand} title={'Car brand'} />
 
-export default FilterGroup
+      <PriceFilter title={'Price/ 1 hour'} onPriceSelect={setSelectedPrice} />
+    </StyledFilterGroup>
+  );
+};
+
+export default FilterGroup;

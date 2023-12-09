@@ -7,11 +7,14 @@ import { StyledCommonWrapper } from 'styles/Common.styled';
 import { StyledList } from './CatalogPage.styled';
 import { LoadMoreButton } from 'components/UI/Button/Button.styled';
 import FilterGroup from 'components/FilterGroup';
+import { getPrice } from 'utils/getPrice';
 
 const CatalogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [cars, setCars] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState(null);
+  const [selectedPrice, setSelectedPrice] = useState(null);
+
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
@@ -37,7 +40,13 @@ const CatalogPage = () => {
     }
   };
 
-  const filteredCars = selectedBrand ? cars.filter(car => car.make === selectedBrand) : cars;
+  const filteredCars = cars.filter(car => {
+    const formattedPrise = getPrice(car.rentalPrice);
+    const brandFilter = !selectedBrand || car.make === selectedBrand;
+    const priceFilter = !selectedPrice || formattedPrise <= selectedPrice;
+
+    return brandFilter && priceFilter;
+  });
 
   const allElementsLoaded = filteredCars.length % perPage !== 0;
 
@@ -46,7 +55,7 @@ const CatalogPage = () => {
       {isLoading && <h2>Loading...</h2>}
       {error && <p>Error: {error}</p>}
 
-      <FilterGroup setSelectedBrand={setSelectedBrand} />
+      <FilterGroup setSelectedBrand={setSelectedBrand} setSelectedPrice={setSelectedPrice} />
 
       {filteredCars.length > 0 && (
         <>

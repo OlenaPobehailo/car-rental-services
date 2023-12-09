@@ -2,7 +2,7 @@ const { default: styled } = require('styled-components');
 
 export const StyledSelect = styled.div`
   position: relative;
-  width: 224px;
+  /* width: 224px; */
 `;
 
 export const SelectTitle = styled.div`

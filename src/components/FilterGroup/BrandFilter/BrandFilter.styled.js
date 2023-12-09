@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
+export const FilterWrapper = styled.div`
+  width: 224px;
+`;
 export const BrandLabel = styled.label`
   display: block;
-  margin-bottom: 8px;  // Add margin for spacing
+  margin-bottom: 8px;
 `;
 
 export const BrandSelect = styled.select`
@@ -12,7 +15,7 @@ export const BrandSelect = styled.select`
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  appearance: none;  // Remove default styling
+  appearance: none;  
   position: relative;
 
   &::after {
@@ -34,4 +37,3 @@ export const StyledOption = styled.option`
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
 `;
-

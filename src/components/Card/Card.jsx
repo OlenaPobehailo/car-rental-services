@@ -15,6 +15,7 @@ import {
   StyledCard,
   StyledHeartIcon,
   StyledList,
+  ErrorImage
 } from './Card.styled';
 import Button from 'components/UI/Button';
 import Modal from 'components/UI/Modal';
@@ -36,6 +37,8 @@ const Card = item => {
   } = item;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
   const dispatch = useDispatch();
 
   const city = getCity(address);
@@ -64,10 +67,17 @@ const Card = item => {
     }
   };
 
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   return (
     <StyledCard>
       <ImageWrapper>
-        <Image src={pathToImage} alt="" />
+        {imageError 
+        ? <ErrorImage>Error loading image</ErrorImage> 
+        : <Image src={pathToImage} alt= {`${make} } ${model}`}
+           onError={handleImageError} />}
       </ImageWrapper>
 
       <Description>

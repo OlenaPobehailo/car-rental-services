@@ -28,11 +28,15 @@ export const StyledCard = styled.li`
 `;
 
 export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   height: 268px;
   border-radius: 14px;
   background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 2.5%, rgba(18, 20, 23, 0) 41.07%),
     url(<path-to-image>), lightgray 50% / cover no-repeat;
-/* 
+  /* 
     & ::before{
       content:"test"
     } */
@@ -47,7 +51,9 @@ export const Image = styled.img`
   object-fit: cover;
 `;
 
-
+export const ErrorImage = styled.p`
+  text-align: center;
+`;
 export const Description = styled.p`
   display: flex;
   justify-content: space-between;
@@ -107,6 +113,7 @@ export const ButtonFavorite = styled.button`
 `;
 
 export const StyledHeartIcon = styled(({ isFavorite, ...rest }) => <HeartIcon {...rest} />)`
-  stroke: ${({ isFavorite }) => (isFavorite ? 'rgba(52, 112, 255, 1)' : 'rgba(255, 255, 255, 0.8)')};
+  stroke: ${({ isFavorite }) =>
+    isFavorite ? 'rgba(52, 112, 255, 1)' : 'rgba(255, 255, 255, 0.8)'};
   fill: ${({ isFavorite }) => (isFavorite ? 'rgba(52, 112, 255, 1)' : 'none')};
 `;

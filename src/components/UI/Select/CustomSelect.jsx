@@ -12,7 +12,6 @@ const CustomSelect = ({ title, options, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const selectRef = useRef(null);
-  const [containerHeight, setContainerHeight] = useState(null);
 
   const handleClickOutside = event => {
     if (selectRef.current && !selectRef.current.contains(event.target)) {

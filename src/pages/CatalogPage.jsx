@@ -14,6 +14,7 @@ const CatalogPage = () => {
   const [cars, setCars] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [selectedPrice, setSelectedPrice] = useState(null);
+  const [mileageRange, setMileageRange] = useState({ minMileage: '', maxMileage: '' });
 
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -44,8 +45,11 @@ const CatalogPage = () => {
     const formattedPrise = getPrice(car.rentalPrice);
     const brandFilter = !selectedBrand || car.make === selectedBrand;
     const priceFilter = !selectedPrice || formattedPrise <= selectedPrice;
+    const mileageFilter =
+    (!mileageRange.minMileage || car.mileage >= Number(mileageRange.minMileage)) &&
+    (!mileageRange.maxMileage || car.mileage <= Number(mileageRange.maxMileage));
 
-    return brandFilter && priceFilter;
+    return brandFilter && priceFilter &&mileageFilter;
   });
 
   const allElementsLoaded = filteredCars.length % perPage !== 0;
@@ -55,7 +59,11 @@ const CatalogPage = () => {
       {isLoading && <h2>Loading...</h2>}
       {error && <p>Error: {error}</p>}
 
-      <FilterGroup setSelectedBrand={setSelectedBrand} setSelectedPrice={setSelectedPrice} />
+      <FilterGroup
+        setSelectedBrand={setSelectedBrand}
+        setSelectedPrice={setSelectedPrice}
+        setMileageRange={setMileageRange}
+      />
 
       {filteredCars.length > 0 && (
         <>

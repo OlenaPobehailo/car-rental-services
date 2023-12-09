@@ -1,7 +1,8 @@
 import brandData from 'assets/data/makes.json';
 import CustomSelect from 'components/UI/Select/CustomSelect';
+import { Title } from '../FilterGroup.styled';
 
-const Filter = ({ onBrandSelect }) => {
+const BrandFilter = ({ onBrandSelect, title }) => {
   const handleSelect = selectedOption => {
     // console.log('Selected option:', selectedOption);
     onBrandSelect(selectedOption);
@@ -9,9 +10,10 @@ const Filter = ({ onBrandSelect }) => {
 
   return (
     <div>
+      <Title>{title}</Title>
       <CustomSelect options={brandData.brands} onSelect={handleSelect} />
     </div>
   );
 };
 
-export default Filter;
+export default BrandFilter;

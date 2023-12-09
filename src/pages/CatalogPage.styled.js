@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledList = styled.ul`
-margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +13,5 @@ margin-top: 100px;
     gap: 29px;
 
     margin-bottom: 100px;
-
-
   }
 `;

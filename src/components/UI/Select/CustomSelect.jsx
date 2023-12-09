@@ -14,7 +14,6 @@ const CustomSelect = ({ options, onSelect }) => {
   const selectRef = useRef(null);
 
   const handleClickOutside = event => {
-
     if (selectRef.current && !selectRef.current.contains(event.target)) {
       setIsOpen(false);
     }
@@ -41,13 +40,17 @@ const CustomSelect = ({ options, onSelect }) => {
   return (
     <StyledSelect ref={selectRef}>
       <SelectTitle>
-        <span>{selectedOption ? selectedOption : 'Enter the text'}</span>
+        <span>{selectedOption || 'Enter the text'}</span>
         <SelectButton>
           <ChevronIcon onClick={toggleOptions} />
         </SelectButton>
       </SelectTitle>
       {isOpen && (
         <OptionsContainer>
+          <Option key="all" onClick={() => handleOptionClick(null)}>
+            All
+          </Option>
+
           {options.map(option => (
             <Option key={option} onClick={() => handleOptionClick(option)}>
               {option}

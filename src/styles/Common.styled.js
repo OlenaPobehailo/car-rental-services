@@ -21,3 +21,9 @@ export const StyledCommonWrapper = styled.div`
 
   outline: 1px solid salmon;   //!  TO DELETE
 `;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;

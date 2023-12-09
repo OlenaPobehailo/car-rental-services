@@ -17,7 +17,7 @@ const MileageFilter = ({ onMileageRanceChange }) => {
   };
 
   return (
-    <>
+    <div>
       <Title>Сar mileage / km</Title>
       <FlexWrapper>
         <InputWrapper>
@@ -39,7 +39,7 @@ const MileageFilter = ({ onMileageRanceChange }) => {
           />
         </InputWrapper>
       </FlexWrapper>
-    </>
+    </div>
   );
 };
 

@@ -4,7 +4,6 @@ import {
   OptionsContainer,
   SelectButton,
   SelectTitle,
-  StyledChevronIcon,
   StyledSelect,
 } from './CustomSelect.styled';
 import { ChevronIcon } from 'assets/images';
@@ -15,7 +14,6 @@ const CustomSelect = ({ options, onSelect }) => {
   const selectRef = useRef(null);
 
   const handleClickOutside = event => {
-    console.log('outside');
 
     if (selectRef.current && !selectRef.current.contains(event.target)) {
       setIsOpen(false);

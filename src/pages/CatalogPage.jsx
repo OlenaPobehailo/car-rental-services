@@ -11,6 +11,7 @@ import Filter from 'components/Filter';
 const CatalogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [cars, setCars] = useState([]);
+  const [selectedBrand, setSelectedBrand] = useState(null);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
@@ -36,19 +37,21 @@ const CatalogPage = () => {
     }
   };
 
-  const allElementsLoaded = cars.length % perPage !== 0;
+  const filteredCars = selectedBrand ? cars.filter(car => car.make === selectedBrand) : cars;
+
+  const allElementsLoaded = filteredCars.length % perPage !== 0;
 
   return (
     <StyledCommonWrapper>
       {isLoading && <h2>Loading...</h2>}
       {error && <p>Error: {error}</p>}
 
-      <Filter />
-      
-      {cars.length > 0 && (
+      <Filter onBrandSelect={setSelectedBrand}/>
+
+      {filteredCars.length > 0 && (
         <>
           <StyledList>
-            {cars.map(item => (
+            {filteredCars.map(item => (
               <Card key={item.id} {...item} />
             ))}
           </StyledList>

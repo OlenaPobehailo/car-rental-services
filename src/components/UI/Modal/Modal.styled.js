@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import theme from 'styles/theme';
+import styled from "styled-components";
+import theme from "styles/theme";
 
 const { colors } = theme;
 
@@ -19,9 +19,11 @@ export const ModalContent = styled.div`
   background-color: ${colors.background.primary};
 
   padding: 40px 37px;
-  overflow: hidden;
   max-width: 541px;
   border-radius: 24px;
+
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
 `;
 
 export const CloseButton = styled.button`

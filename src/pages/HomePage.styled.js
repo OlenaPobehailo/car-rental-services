@@ -6,7 +6,6 @@ export const StyledHomePage = styled.div`
   min-height: 90vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(224, 236, 255, 0.8));
 
   &::after {
@@ -20,7 +19,6 @@ export const StyledHomePage = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    /* opacity: 0.3; */
     z-index: -1;
   }
 `;

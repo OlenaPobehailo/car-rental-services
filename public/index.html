@@ -4,16 +4,21 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/hatchback-car-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <meta
       name="description"
-      content="Explore the freedom of travel with our premier car rental services in Ukraine. Discover a wide range of vehicles for rent, from compact cars to luxurious options. Enjoy a seamless and convenient rental experience with our customer-centric approach. Book your ideal car for business or leisure and embark on a journey of comfort and style. Choose car rental company for reliable and affordable car rental solutions across Ukraine."
+      content="Discover comfort and style with our premier car rental services
+       in Ukraine. From compact to luxurious vehicles, choose reliability 
+       and affordability for your business or leisure journey"
+      <meta
+      name="keywords"
+      content="car rental, travel, vehicles, family trip, business meeting, weekend getaway"
     />
-    
+
     <title>Car Rental Service</title>
 
-     <!-- Start Single Page Apps for GitHub Pages -->
-     <script type="text/javascript">
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
@@ -25,25 +30,27 @@
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
       (function (l) {
-        if (l.search[1] === '/') {
+        if (l.search[1] === "/") {
           var decoded = l.search
             .slice(1)
-            .split('&')
+            .split("&")
             .map(function (s) {
-              return s.replace(/~and~/g, '&');
+              return s.replace(/~and~/g, "&");
             })
-            .join('?');
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
         }
       })(window.location);
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
-
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <div id='modal'></div>
-
+    <div id="modal"></div>
   </body>
 </html>

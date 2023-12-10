@@ -12,7 +12,7 @@ export const StyledFooter = styled.footer`
   background-color: #e0ecff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
-  z-index: 1;
+  /* z-index: 1; */
 `;
 
 export const StyledGithubIcon = styled(FaGithub)`

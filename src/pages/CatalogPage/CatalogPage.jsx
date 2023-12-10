@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "components/Card";
-import { getAllCars } from "../redux/cars/operations";
-import { selectError, selectIsLoading } from "../redux/cars/selectors";
+import { getAllCars } from "../../redux/cars/operations";
+import { selectError, selectIsLoading } from "../../redux/cars/selectors";
 import { StyledCommonWrapper } from "styles/Common.styled";
 import { HiddenTitle, StyledList } from "./CatalogPage.styled";
 import { LoadMoreButton } from "components/UI/Button/Button.styled";

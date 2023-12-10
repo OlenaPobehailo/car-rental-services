@@ -126,17 +126,17 @@ const Card = (item) => {
 };
 
 Card.propTypes = {
-  id: PropTypes.number.isRequired,
-  img: PropTypes.string.isRequired,
-  model: PropTypes.string.isRequired,
-  make: PropTypes.string.isRequired,
-  year: PropTypes.number.isRequired,
-  address: PropTypes.string.isRequired,
-  rentalCompany: PropTypes.string.isRequired,
+  id: PropTypes.number,
+  img: PropTypes.string,
+  model: PropTypes.string,
+  make: PropTypes.string,
+  year: PropTypes.number,
+  address: PropTypes.string,
+  rentalCompany: PropTypes.string,
   accessories: PropTypes.arrayOf(PropTypes.string),
-  type: PropTypes.string.isRequired,
-  mileage: PropTypes.number.isRequired,
-  rentalPrice: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  mileage: PropTypes.number,
+  rentalPrice: PropTypes.string,
 };
 
 export default Card;

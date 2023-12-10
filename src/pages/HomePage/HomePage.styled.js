@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { images } from "../assets/images/index";
+import { images } from "../../assets/images/index";
 
 export const StyledHomePage = styled.div`
   position: relative;

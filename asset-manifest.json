@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/car-rental-services/static/css/main.0e9e0d2b.css",
-    "main.js": "/car-rental-services/static/js/main.4b3b8a64.js",
+    "main.js": "/car-rental-services/static/js/main.dbee8da8.js",
+    "static/media/car.png": "/car-rental-services/static/media/car.8748fe2c00a7629677ee.png",
     "static/media/Montserrat-SemiBold.ttf": "/car-rental-services/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
     "static/media/Montserrat-Medium.ttf": "/car-rental-services/static/media/Montserrat-Medium.b8c6753baa964ccac1ba.ttf",
     "static/media/Montserrat-Regular.ttf": "/car-rental-services/static/media/Montserrat-Regular.24785cc015b27a3e964b.ttf",
@@ -13,10 +14,10 @@
     "static/media/cross.svg": "/car-rental-services/static/media/cross.a356a9d23b0c95a1f71eded679de3c0e.svg",
     "static/media/chevron-down.svg": "/car-rental-services/static/media/chevron-down.438d8e3277ae93917ceec01bb2eab2bb.svg",
     "main.0e9e0d2b.css.map": "/car-rental-services/static/css/main.0e9e0d2b.css.map",
-    "main.4b3b8a64.js.map": "/car-rental-services/static/js/main.4b3b8a64.js.map"
+    "main.dbee8da8.js.map": "/car-rental-services/static/js/main.dbee8da8.js.map"
   },
   "entrypoints": [
     "static/css/main.0e9e0d2b.css",
-    "static/js/main.4b3b8a64.js"
+    "static/js/main.dbee8da8.js"
   ]
 }

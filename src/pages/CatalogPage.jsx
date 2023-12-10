@@ -8,6 +8,7 @@ import { HiddenTitle, StyledList } from "./CatalogPage.styled";
 import { LoadMoreButton } from "components/UI/Button/Button.styled";
 import FilterGroup from "components/FilterGroup";
 import { getPrice } from "utils/getPrice";
+import Loader from "components/Loader";
 
 const CatalogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -63,14 +64,14 @@ const CatalogPage = () => {
     <StyledCommonWrapper>
       <HiddenTitle>Rental Cars Catalog</HiddenTitle>
 
-      {isLoading && <h2>Loading...</h2>}
-      {error && <p>Error: {error}</p>}
-
       <FilterGroup
         setSelectedBrand={setSelectedBrand}
         setSelectedPrice={setSelectedPrice}
         setMileageRange={setMileageRange}
       />
+
+      {isLoading && <Loader />}
+      {error && <p>Error: {error}</p>}
 
       {filteredCars.length > 0 && (
         <>

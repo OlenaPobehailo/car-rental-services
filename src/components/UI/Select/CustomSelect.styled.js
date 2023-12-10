@@ -15,7 +15,7 @@ export const SelectTitle = styled.div`
   border-radius: 14px;
   background: #f7f7fb;
   position: relative;
-  z-index: 2;
+  /* z-index: 1; */
 `;
 
 export const SelectButton = styled.button`

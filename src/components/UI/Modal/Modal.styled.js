@@ -24,6 +24,7 @@ export const ModalContent = styled.div`
 
   max-height: calc(100vh - 20px);
   overflow-y: auto;
+  z-index: 100;
 `;
 
 export const CloseButton = styled.button`

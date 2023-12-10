@@ -36,16 +36,11 @@ export const ImageWrapper = styled.div`
   border-radius: 14px;
   background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 2.5%, rgba(18, 20, 23, 0) 41.07%),
     url(<path-to-image>), lightgray 50% / cover no-repeat;
-  /* 
-    & ::before{
-      content:"test"
-    } */
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 268px;
-  margin-bottom: 14px;
   border-radius: 14px;
 
   object-fit: cover;

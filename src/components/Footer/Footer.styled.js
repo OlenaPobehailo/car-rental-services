@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import styled from 'styled-components';
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
   display: flex;
@@ -9,18 +9,18 @@ export const StyledFooter = styled.footer`
   margin-top: auto;
   width: 100%;
   padding: 20px;
-
   background-color: #e0ecff;
-
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  z-index: 1;
 `;
 
 export const StyledGithubIcon = styled(FaGithub)`
-  color: #3470FF;
+  color: #3470ff;
   font-size: 25px;
 `;
 
 export const StyledLinkedinIcon = styled(FaLinkedin)`
-  color: #3470FF;
+  color: #3470ff;
   font-size: 25px;
 `;

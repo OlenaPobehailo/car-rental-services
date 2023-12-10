@@ -19,7 +19,7 @@ export const StyledCommonWrapper = styled.div`
     width: 1440px;
   }
 
-  outline: 1px solid salmon;   //!  TO DELETE
+  /* outline: 1px solid salmon;   //!  TO DELETE */
 `;
 
 export const Container = styled.div`

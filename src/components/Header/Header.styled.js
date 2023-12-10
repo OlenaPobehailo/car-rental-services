@@ -2,12 +2,10 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledHeader = styled.nav`
-  margin-bottom: 35px;
   padding: 20px;
 
   background-color: #e0ecff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 `;
 
 export const StyledLinkList = styled.ul`

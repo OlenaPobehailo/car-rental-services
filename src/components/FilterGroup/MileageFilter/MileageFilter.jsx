@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
-import { FlexWrapper, InputFrom, InputTo, InputWrapper } from './MileageFilter.styled';
-import { Title } from '../FilterGroup.styled';
+import PropTypes from "prop-types";
+import { useState } from "react";
+import {
+  FlexWrapper,
+  InputFrom,
+  InputTo,
+  InputWrapper,
+} from "./MileageFilter.styled";
+import { Title } from "../FilterGroup.styled";
 
 const MileageFilter = ({ onMileageRanceChange }) => {
-  const [minMileage, setMinMileage] = useState('');
-  const [maxMileage, setMaxMileage] = useState('');
+  const [minMileage, setMinMileage] = useState("");
+  const [maxMileage, setMaxMileage] = useState("");
 
-  const handleMinMileageChange = e => {
+  const handleMinMileageChange = (e) => {
     setMinMileage(e.target.value);
     onMileageRanceChange({ minMileage: e.target.value, maxMileage });
   };
 
-  const handleMaxMileageChange = e => {
+  const handleMaxMileageChange = (e) => {
     setMaxMileage(e.target.value);
     onMileageRanceChange({ minMileage, maxMileage: e.target.value });
   };
@@ -41,6 +47,10 @@ const MileageFilter = ({ onMileageRanceChange }) => {
       </FlexWrapper>
     </div>
   );
+};
+
+MileageFilter.propTypes = {
+  onMileageRangeChange: PropTypes.func,
 };
 
 export default MileageFilter;

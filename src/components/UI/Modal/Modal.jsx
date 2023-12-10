@@ -1,15 +1,16 @@
-import ReactDOM from 'react-dom';
-import { useCallback, useEffect } from 'react';
+import ReactDOM from "react-dom";
+import { useCallback, useEffect } from "react";
+import PropTypes from "prop-types";
 
-import { CloseButton, ModalContent, ModalWrapper } from './Modal.styled';
-import { CrossIcon } from 'assets/images';
+import { CloseButton, ModalContent, ModalWrapper } from "./Modal.styled";
+import { CrossIcon } from "assets/images";
 
-const rootModal = document.querySelector('#modal');
+const rootModal = document.querySelector("#modal");
 
 const Modal = ({ children, close }) => {
   const handleKeyDown = useCallback(
-    e => {
-      if (e.key === 'Escape') {
+    (e) => {
+      if (e.key === "Escape") {
         close();
       }
     },
@@ -17,11 +18,11 @@ const Modal = ({ children, close }) => {
   );
 
   useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    document.body.style.overflow = 'hidden';
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'visible';
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "visible";
     };
   }, [close, handleKeyDown]);
 
@@ -42,6 +43,11 @@ const Modal = ({ children, close }) => {
     </ModalWrapper>,
     rootModal
   );
+};
+
+Modal.propTypes = {
+  children: PropTypes.node.isRequired,
+  close: PropTypes.func.isRequired,
 };
 
 export default Modal;

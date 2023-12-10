@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ButtonStyled } from './Button.styled';
 
 const Button = ({ children, name, ...props }) => {
@@ -6,6 +7,11 @@ const Button = ({ children, name, ...props }) => {
       {children}
     </ButtonStyled>
   );
+};
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  name: PropTypes.string,
 };
 
 export default Button;

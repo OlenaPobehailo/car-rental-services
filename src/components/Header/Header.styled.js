@@ -10,7 +10,7 @@ export const StyledHeader = styled.nav`
 
 export const StyledLinkList = styled.ul`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   gap: 10px;
 `;
 

@@ -1,10 +1,14 @@
-import { images } from 'assets/images';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectFavorites } from '../../redux/favorites/selectors';
-import { addToFavorites, removeFromFavorites } from '../../redux/favorites/slice';
-import { isPremium } from 'utils/isPremium';
-import { getCity, getCountry } from 'utils/splitAddress';
+import { images } from "assets/images";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import PropTypes from "prop-types";
+import { selectFavorites } from "../../redux/favorites/selectors";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/favorites/slice";
+import { isPremium } from "utils/isPremium";
+import { getCity, getCountry } from "utils/splitAddress";
 import {
   ButtonFavorite,
   Description,
@@ -15,13 +19,13 @@ import {
   StyledCard,
   StyledHeartIcon,
   StyledList,
-  ErrorImage
-} from './Card.styled';
-import Button from 'components/UI/Button';
-import Modal from 'components/UI/Modal';
-import Details from 'components/Details';
+  ErrorImage,
+} from "./Card.styled";
+import Button from "components/UI/Button";
+import Modal from "components/UI/Modal";
+import Details from "components/Details";
 
-const Card = item => {
+const Card = (item) => {
   const {
     id,
     img,
@@ -44,10 +48,10 @@ const Card = item => {
   const city = getCity(address);
   const country = getCountry(address);
   const premium = isPremium(accessories);
-  const formattedMileage = mileage.toLocaleString('en-US');
+  const formattedMileage = mileage.toLocaleString("en-US");
 
   const favorites = useSelector(selectFavorites);
-  const isFavorite = favorites.some(item => item.id === id);
+  const isFavorite = favorites.some((item) => item.id === id);
 
   const pathToImage = img || images.placeholder;
 
@@ -74,10 +78,15 @@ const Card = item => {
   return (
     <StyledCard>
       <ImageWrapper>
-        {imageError 
-        ? <ErrorImage>Error loading image</ErrorImage> 
-        : <Image src={pathToImage} alt= {`${make} } ${model}`}
-           onError={handleImageError} />}
+        {imageError ? (
+          <ErrorImage>Error loading image</ErrorImage>
+        ) : (
+          <Image
+            src={pathToImage}
+            alt={`${make} } ${model}`}
+            onError={handleImageError}
+          />
+        )}
       </ImageWrapper>
 
       <Description>
@@ -92,7 +101,7 @@ const Card = item => {
         <Item>{city}</Item>
         <Item>{country}</Item>
         <Item>{rentalCompany}</Item>
-        <Item>{premium ? 'Premium' : null}</Item>
+        <Item>{premium ? "Premium" : null}</Item>
       </StyledList>
       <StyledList>
         <Item>{type}</Item>
@@ -114,6 +123,20 @@ const Card = item => {
       )}
     </StyledCard>
   );
+};
+
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
+  make: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+  address: PropTypes.string.isRequired,
+  rentalCompany: PropTypes.string.isRequired,
+  accessories: PropTypes.arrayOf(PropTypes.string),
+  type: PropTypes.string.isRequired,
+  mileage: PropTypes.number.isRequired,
+  rentalPrice: PropTypes.string.isRequired,
 };
 
 export default Card;

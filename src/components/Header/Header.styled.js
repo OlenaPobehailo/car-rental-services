@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledHeader = styled.nav`
+  width: 100%;
   padding: 20px;
 
   background-color: #e0ecff;
@@ -16,7 +17,6 @@ export const StyledLinkList = styled.ul`
 
 export const StyledNavLink = styled(NavLink)`
   padding: 20px 10px;
-  margin: 0 10px;
 
   font-size: 24px;
   font-weight: bold;

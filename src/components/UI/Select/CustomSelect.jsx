@@ -45,7 +45,6 @@ const CustomSelect = ({ title, options, onSelect, isPriceFilter }) => {
       className={isOpen ? "open" : ""}
     >
       <SelectTitle>
-        {/* <span>{selectedOption ? `To ${selectedOption} $` : title}</span> */}
         {selectedOption
           ? isPriceFilter
             ? `To ${selectedOption} $`

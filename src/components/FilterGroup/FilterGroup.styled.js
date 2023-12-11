@@ -11,7 +11,13 @@ export const StyledFilterGroup = styled.div`
 export const Title = styled.p`
   color: #8a8a89;
 
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: 400;
   line-height: 1.3;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 `;

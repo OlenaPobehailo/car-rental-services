@@ -10,10 +10,16 @@ export const SelectTitle = styled.div`
   align-items: center;
   padding: 10px;
   border: none;
-  padding: 14px 18px;
+  padding: 10px;
   border-radius: 14px;
   background: #f7f7fb;
   position: relative;
+  font-size: 10px;
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 18px;
+    font-size: 18px;
+  }
 `;
 
 export const SelectButton = styled.button`

@@ -18,6 +18,7 @@ const PriceFilter = ({ title, onPriceSelect }) => {
         title={"To $"}
         options={priceData}
         onSelect={handlePriceSelect}
+        isPriceFilter={true}
       />
     </div>
   );

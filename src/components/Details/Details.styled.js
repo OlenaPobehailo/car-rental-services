@@ -29,6 +29,8 @@ export const ImageWrapper = styled.div`
 export const Image = styled.img`
   object-fit: cover;
   object-position: center;
+  border-radius: 14px;
+
 `;
 
 export const Title = styled.p`

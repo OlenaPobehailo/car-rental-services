@@ -9,7 +9,7 @@ import {
 } from "./CustomSelect.styled";
 import { ChevronIcon } from "assets/images";
 
-const CustomSelect = ({ title, options, onSelect }) => {
+const CustomSelect = ({ title, options, onSelect, isPriceFilter }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const selectRef = useRef(null);
@@ -39,10 +39,20 @@ const CustomSelect = ({ title, options, onSelect }) => {
   };
 
   return (
-    <StyledSelect ref={selectRef} title={title}>
+    <StyledSelect
+      ref={selectRef}
+      title={title}
+      className={isOpen ? "open" : ""}
+    >
       <SelectTitle>
-        <span>{selectedOption || title}</span>
-        <SelectButton>
+        {/* <span>{selectedOption ? `To ${selectedOption} $` : title}</span> */}
+        {selectedOption
+          ? isPriceFilter
+            ? `To ${selectedOption} $`
+            : selectedOption
+          : title}
+
+        <SelectButton $isopen={isOpen.toString()}>
           <ChevronIcon onClick={toggleOptions} />
         </SelectButton>
       </SelectTitle>
@@ -67,6 +77,7 @@ CustomSelect.propTypes = {
   title: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.shape).isRequired,
   onSelect: PropTypes.func.isRequired,
+  isPriceFilter: PropTypes.bool,
 };
 
 export default CustomSelect;

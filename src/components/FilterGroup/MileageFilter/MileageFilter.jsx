@@ -13,13 +13,15 @@ const MileageFilter = ({ onMileageRanceChange }) => {
   const [maxMileage, setMaxMileage] = useState("");
 
   const handleMinMileageChange = (e) => {
-    setMinMileage(e.target.value);
-    onMileageRanceChange({ minMileage: e.target.value, maxMileage });
+    const value = e.target.value.replace(/\D/g, "");
+    setMinMileage(value);
+    onMileageRanceChange({ minMileage: value, maxMileage });
   };
 
   const handleMaxMileageChange = (e) => {
-    setMaxMileage(e.target.value);
-    onMileageRanceChange({ minMileage, maxMileage: e.target.value });
+    const value = e.target.value.replace(/\D/g, "");
+    setMaxMileage(value);
+    onMileageRanceChange({ minMileage, maxMileage: value });
   };
 
   return (
@@ -29,18 +31,26 @@ const MileageFilter = ({ onMileageRanceChange }) => {
         <InputWrapper>
           <label htmlFor="minMileage">From</label>
           <InputFrom
-            type="number"
+            type="text"
             id="minMileage"
-            value={minMileage}
+            value={
+              minMileage !== ""
+                ? parseInt(minMileage).toLocaleString("en-US")
+                : ""
+            }
             onChange={handleMinMileageChange}
           />
         </InputWrapper>
         <InputWrapper>
           <label htmlFor="maxMileage">To</label>
           <InputTo
-            type="number"
+            type="text"
             id="maxMileage"
-            value={maxMileage}
+            value={
+              maxMileage !== ""
+                ? parseInt(maxMileage).toLocaleString("en-US")
+                : ""
+            }
             onChange={handleMaxMileageChange}
           />
         </InputWrapper>

@@ -17,6 +17,7 @@ const BrandFilter = ({ onBrandSelect, title }) => {
         options={brandData.brands}
         onSelect={handleSelect}
         maxHeight="274px"
+        isPriceFilter={false}
       />
     </FilterWrapper>
   );

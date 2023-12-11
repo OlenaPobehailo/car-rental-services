@@ -1,4 +1,4 @@
-const { default: styled } = require('styled-components');
+import styled from "styled-components";
 
 export const StyledSelect = styled.div`
   position: relative;
@@ -24,6 +24,10 @@ export const SelectButton = styled.button`
   align-items: center;
   background-color: transparent;
   cursor: pointer;
+
+  transform: ${({ $isopen }) =>
+    $isopen === "true" ? "rotate(180deg)" : "rotate(0deg)"};
+  transition: transform 0.3s ease;
 `;
 
 export const OptionsContainer = styled.div`

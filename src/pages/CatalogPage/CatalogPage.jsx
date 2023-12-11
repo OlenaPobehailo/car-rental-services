@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "components/Card";
-import { getAllCars } from "../../redux/cars/operations";
-import { selectError, selectIsLoading } from "../../redux/cars/selectors";
-import { StyledCommonWrapper } from "styles/Common.styled";
-import { HiddenTitle, StyledList } from "./CatalogPage.styled";
+import Loader from "components/Loader";
 import { LoadMoreButton } from "components/UI/Button/Button.styled";
 import FilterGroup from "components/FilterGroup";
+import { getAllCars } from "../../redux/cars/operations";
+import { selectError, selectIsLoading } from "../../redux/cars/selectors";
 import { getPrice } from "utils/getPrice";
-import Loader from "components/Loader";
+import { HiddenTitle, StyledList } from "./CatalogPage.styled";
+import { StyledCommonWrapper } from "styles/Common.styled";
 
 const CatalogPage = () => {
   const [currentPage, setCurrentPage] = useState(1);

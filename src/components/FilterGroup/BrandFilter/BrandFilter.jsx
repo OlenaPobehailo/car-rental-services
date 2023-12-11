@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import brandData from "assets/data/makes.json";
 import CustomSelect from "components/UI/Select/CustomSelect";
+import brandData from "assets/data/makes.json";
 import { Title } from "../FilterGroup.styled";
 import { FilterWrapper } from "./BrandFilter.styled";
 

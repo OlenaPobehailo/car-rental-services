@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
+import { ChevronIcon } from "assets/images";
 import {
   Option,
   OptionsContainer,
@@ -7,7 +8,6 @@ import {
   SelectTitle,
   StyledSelect,
 } from "./CustomSelect.styled";
-import { ChevronIcon } from "assets/images";
 
 const CustomSelect = ({ title, options, onSelect, isPriceFilter }) => {
   const [isOpen, setIsOpen] = useState(false);

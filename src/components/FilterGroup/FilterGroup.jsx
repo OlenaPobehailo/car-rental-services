@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
-
 import BrandFilter from "components/FilterGroup/BrandFilter/BrandFilter";
-import { StyledFilterGroup } from "./FilterGroup.styled";
 import PriceFilter from "./PriceFilter";
 import MileageFilter from "./MileageFilter";
+import { StyledFilterGroup } from "./FilterGroup.styled";
 
 const FilterGroup = ({
   setSelectedBrand,

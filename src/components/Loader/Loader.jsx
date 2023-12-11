@@ -1,6 +1,5 @@
-import React from "react";
-import { StyledLoader } from "./Loader.styled";
 import { Hearts } from "react-loader-spinner";
+import { StyledLoader } from "./Loader.styled";
 
 const Loader = () => {
   return (

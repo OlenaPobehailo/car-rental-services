@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { images } from "assets/images";
 import { ErrorImage, Item, Model } from "components/Card/Card.styled";
 import { getCity, getCountry } from "utils/splitAddress";
+import splitRentalConditions, { getAge } from "utils/handleRentalConditions";
 import {
   Conditions,
   ConditionsItem,
@@ -15,7 +16,6 @@ import {
 } from "./Details.styled";
 import { RentalButton } from "components/UI/Button/Button.styled";
 import { useState } from "react";
-import splitRentalConditions, { getAge } from "utils/handleRentalConditions";
 
 const Details = (item) => {
   const {

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import { Title } from "../FilterGroup.styled";
 import CustomSelect from "components/UI/Select/CustomSelect";
 import { priceData } from "assets/data/priceData";
+import { Title } from "../FilterGroup.styled";
 
 const PriceFilter = ({ title, onPriceSelect }) => {
   const handlePriceSelect = (selectedOption) => {

@@ -1,7 +1,10 @@
-import { images } from "assets/images";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
+import { images } from "assets/images";
+import Button from "components/UI/Button";
+import Modal from "components/UI/Modal";
+import Details from "components/Details";
 import { selectFavorites } from "../../redux/favorites/selectors";
 import {
   addToFavorites,
@@ -21,9 +24,6 @@ import {
   StyledList,
   ErrorImage,
 } from "./Card.styled";
-import Button from "components/UI/Button";
-import Modal from "components/UI/Modal";
-import Details from "components/Details";
 
 const Card = (item) => {
   const {

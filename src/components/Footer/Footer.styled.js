@@ -1,5 +1,5 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import styled from "styled-components";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const StyledFooter = styled.footer`
   display: flex;

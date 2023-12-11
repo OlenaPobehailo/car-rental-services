@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { selectFavorites } from "../../redux/favorites/selectors";
 
-import { StyledCommonWrapper } from "styles/Common.styled";
 import Card from "components/Card";
+import { StyledCommonWrapper } from "styles/Common.styled";
 import { HiddenTitle, StyledList } from "../CatalogPage/CatalogPage.styled";
 import { Title, Wrapper } from "./FavoritesPage.styled";
 

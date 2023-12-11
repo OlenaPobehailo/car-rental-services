@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import { images } from "assets/images";
-import { Item, Model } from "components/Card/Card.styled";
+import { ErrorImage, Item, Model } from "components/Card/Card.styled";
 import { getCity, getCountry } from "utils/splitAddress";
-import splitRentalConditions from "utils/splitRentalConditions";
 import {
   Conditions,
   ConditionsItem,
@@ -12,8 +11,11 @@ import {
   StyledList,
   Title,
   Image,
+  AccentedText,
 } from "./Details.styled";
 import { RentalButton } from "components/UI/Button/Button.styled";
+import { useState } from "react";
+import splitRentalConditions, { getAge } from "utils/handleRentalConditions";
 
 const Details = (item) => {
   console.log(item);
@@ -34,17 +36,26 @@ const Details = (item) => {
     engineSize,
     description,
   } = item;
+  const [imageError, setImageError] = useState(false);
 
   const city = getCity(address);
   const country = getCountry(address);
   const formattedMileage = mileage.toLocaleString("en-US");
   const rentalConditionsArray = splitRentalConditions(rentalConditions);
   const pathToImage = img || images.placeholder;
+  const age = getAge(rentalConditions);
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <div>
       <ImageWrapper>
-        <Image src={pathToImage} alt={model} />
+        {imageError ? (
+          <ErrorImage>Error loading image from server</ErrorImage>
+        ) : (
+          <Image src={pathToImage} alt={model} onError={handleImageError} />
+        )}
       </ImageWrapper>
 
       <Title>
@@ -81,11 +92,19 @@ const Details = (item) => {
 
       <Subtitle>Rental Conditions: </Subtitle>
       <Conditions>
-        <ConditionsItem>{rentalConditionsArray[0]}</ConditionsItem>
+        <ConditionsItem>
+          Minimum age : <AccentedText>{age}</AccentedText>
+        </ConditionsItem>
         <ConditionsItem>{rentalConditionsArray[1]}</ConditionsItem>
+      </Conditions>
+      <Conditions>
         <ConditionsItem>{rentalConditionsArray[2]}</ConditionsItem>
-        <ConditionsItem>Mileage: {formattedMileage}</ConditionsItem>
-        <ConditionsItem>Price: {rentalPrice}</ConditionsItem>
+        <ConditionsItem>
+          Mileage: <AccentedText>{formattedMileage}</AccentedText>
+        </ConditionsItem>
+        <ConditionsItem>
+          Price: <AccentedText>{rentalPrice}</AccentedText>
+        </ConditionsItem>
       </Conditions>
       <RentalButton href="tel:+380730000000">Rental car</RentalButton>
     </div>

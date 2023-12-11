@@ -79,7 +79,7 @@ const Card = (item) => {
     <StyledCard>
       <ImageWrapper>
         {imageError ? (
-          <ErrorImage>Error loading image</ErrorImage>
+          <ErrorImage>Error loading image from server</ErrorImage>
         ) : (
           <Image
             src={pathToImage}

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Conditions = styled.ul`
   display: flex;
@@ -30,7 +30,6 @@ export const Image = styled.img`
   object-fit: cover;
   object-position: center;
   border-radius: 14px;
-
 `;
 
 export const Title = styled.p`
@@ -70,4 +69,9 @@ export const Description = styled.p`
 
   font-size: 14px;
   line-height: 1.43;
+`;
+
+export const AccentedText = styled.span`
+  color: #3470ff;
+  font-weight: 600;
 `;

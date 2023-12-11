@@ -1,38 +1,44 @@
 @import-normalize;
 
 @font-face {
-  font-family: 'Manrope';
-  src: local('Manrope Regular'), url('/public/fonts/Manrope-Regular.ttf') format('truetype');
+  font-family: "Manrope";
+  src: local("Manrope Regular"),
+    url("/public/fonts/Manrope-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Manrope';
-  src: local('Manrope Medium'), url('/public/fonts/Manrope-Medium.ttf') format('truetype');
+  font-family: "Manrope";
+  src: local("Manrope Medium"),
+    url("/public/fonts/Manrope-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Manrope';
-  src: local('Manrope Semibold'), url('/public/fonts/Manrope-SemiBold.ttf') format('truetype');
+  font-family: "Manrope";
+  src: local("Manrope Semibold"),
+    url("/public/fonts/Manrope-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: local('Montserrat Regular'), url('/public/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: local("Montserrat Regular"),
+    url("/public/fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: local('Montserrat Medium'), url('/public/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: local("Montserrat Medium"),
+    url("/public/fonts/Montserrat-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: local('Montserrat Semibold'), url('/public/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: local("Montserrat Semibold"),
+    url("/public/fonts/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
 

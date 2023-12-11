@@ -1,5 +1,5 @@
-import { HeartIcon } from 'assets/images';
-import styled from 'styled-components';
+import { HeartIcon } from "assets/images";
+import styled from "styled-components";
 
 export const StyledCard = styled.li`
   position: relative;
@@ -8,16 +8,6 @@ export const StyledCard = styled.li`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 14px;
-
-  /* flex-basis: calc(100% - 30px); */
-
-  @media screen and (min-width: 768px) {
-    /* flex-basis: calc((100% - 30px) / 2); */
-  }
-
-  @media screen and (min-width: 1200px) {
-    /* flex-basis: calc((100% - 90px) / 4); */
-  }
 
   transition: scale 0.3s, box-shadow 0.3s;
 
@@ -34,7 +24,11 @@ export const ImageWrapper = styled.div`
 
   height: 268px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 2.5%, rgba(18, 20, 23, 0) 41.07%),
+  background: linear-gradient(
+      180deg,
+      rgba(18, 20, 23, 0.5) 2.5%,
+      rgba(18, 20, 23, 0) 41.07%
+    ),
     url(<path-to-image>), lightgray 50% / cover no-repeat;
 `;
 
@@ -107,8 +101,10 @@ export const ButtonFavorite = styled.button`
   border: none;
 `;
 
-export const StyledHeartIcon = styled(({ isFavorite, ...rest }) => <HeartIcon {...rest} />)`
+export const StyledHeartIcon = styled(({ isFavorite, ...rest }) => (
+  <HeartIcon {...rest} />
+))`
   stroke: ${({ isFavorite }) =>
-    isFavorite ? 'rgba(52, 112, 255, 1)' : 'rgba(255, 255, 255, 0.8)'};
-  fill: ${({ isFavorite }) => (isFavorite ? 'rgba(52, 112, 255, 1)' : 'none')};
+    isFavorite ? "rgba(52, 112, 255, 1)" : "rgba(255, 255, 255, 0.8)"};
+  fill: ${({ isFavorite }) => (isFavorite ? "rgba(52, 112, 255, 1)" : "none")};
 `;

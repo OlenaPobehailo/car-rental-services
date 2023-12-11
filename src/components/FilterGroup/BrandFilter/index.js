@@ -1,1 +1,1 @@
-export { default } from './BrandFilter';
+export { default } from "./BrandFilter";

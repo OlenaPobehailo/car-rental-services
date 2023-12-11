@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledSelect = styled.div`
   position: relative;
-  /* width: 224px; */
 `;
 
 export const SelectTitle = styled.div`
@@ -15,7 +14,6 @@ export const SelectTitle = styled.div`
   border-radius: 14px;
   background: #f7f7fb;
   position: relative;
-  /* z-index: 1; */
 `;
 
 export const SelectButton = styled.button`

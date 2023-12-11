@@ -33,6 +33,5 @@ export const StyledLink = styled(Link)`
   &:hover {
     color: ${theme.colors.accent.primary};
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
   }
 `;

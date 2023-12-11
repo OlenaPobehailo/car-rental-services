@@ -1,7 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
-import carsReducer from './cars/slice';
-import favoritesReducer from './favorites/slice';
-
+import { configureStore } from "@reduxjs/toolkit";
+import carsReducer from "./cars/slice";
+import favoritesReducer from "./favorites/slice";
 
 import {
   persistStore,
@@ -12,18 +11,17 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-import { PersistGate } from 'redux-persist/integration/react'
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { PersistGate } from "redux-persist/integration/react";
 
 const persistConfig = {
-  key: 'favorites',
+  key: "favorites",
   version: 1,
   storage,
-}
+};
 
-const persistedReducer = persistReducer(persistConfig, favoritesReducer)
-
+const persistedReducer = persistReducer(persistConfig, favoritesReducer);
 
 export const store = configureStore({
   reducer: {
@@ -32,11 +30,11 @@ export const store = configureStore({
   },
 
   middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }),});
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
 
-export const persistor = persistStore(store)
-
+export const persistor = persistStore(store);

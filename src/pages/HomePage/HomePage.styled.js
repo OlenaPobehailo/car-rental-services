@@ -6,7 +6,11 @@ export const StyledHomePage = styled.div`
   min-height: 90vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(224, 236, 255, 0.8));
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(224, 236, 255, 0.8)
+  );
 
   &::after {
     content: "";
@@ -22,7 +26,6 @@ export const StyledHomePage = styled.div`
     z-index: -1;
   }
 `;
-
 
 export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.text.primary};

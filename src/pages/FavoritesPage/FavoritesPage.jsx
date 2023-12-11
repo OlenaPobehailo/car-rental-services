@@ -8,7 +8,6 @@ import { Title, Wrapper } from "./FavoritesPage.styled";
 
 const FavoritesPage = () => {
   const favorites = useSelector(selectFavorites);
-  console.log(favorites);
 
   return (
     <StyledCommonWrapper>

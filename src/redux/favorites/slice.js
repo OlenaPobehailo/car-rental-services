@@ -9,7 +9,6 @@ export const slice = createSlice({
 
   reducers: {
     addToFavorites: (state, { payload }) => {
-      console.log(payload);
       state.favoritesList.push(payload);
     },
 

@@ -4,10 +4,8 @@ import CustomSelect from "components/UI/Select/CustomSelect";
 import { priceData } from "assets/data/priceData";
 
 const PriceFilter = ({ title, onPriceSelect }) => {
-  // console.log(priceData);
 
   const handlePriceSelect = (selectedOption) => {
-    // console.log(selectedOption);
     onPriceSelect(selectedOption);
   };
 

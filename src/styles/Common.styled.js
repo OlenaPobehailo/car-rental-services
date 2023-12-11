@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledCommonWrapper = styled.div`
   min-width: 320px;
@@ -18,8 +18,6 @@ export const StyledCommonWrapper = styled.div`
   @media screen and (min-width: 1440px) {
     width: 1440px;
   }
-
-  /* outline: 1px solid salmon;   //!  TO DELETE */
 `;
 
 export const Container = styled.div`

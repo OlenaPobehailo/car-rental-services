@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import theme from 'styles/theme';
 
-// console.log(theme);
 const { colors } = theme;
 
 export const ButtonStyled = styled.button`

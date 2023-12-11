@@ -18,7 +18,6 @@ import { useState } from "react";
 import splitRentalConditions, { getAge } from "utils/handleRentalConditions";
 
 const Details = (item) => {
-  console.log(item);
   const {
     img,
     model,
